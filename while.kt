@@ -8,7 +8,7 @@ fun main (){
                 println("Intento generar numero aleatorio numero $contador")
                 val numeroAleatorio = (0..1000).random()
                 println("El numero aleatorio es $numeroAleatorio")
-                contador = contador +1
+                contador ++
                 
             }while(numeroAleatorio > 12)
                 
