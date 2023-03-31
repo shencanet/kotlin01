@@ -40,4 +40,23 @@ fun main(args: Array<String>) {
 
 
 
-}
+} 
+/*Mapas
+Los mapas asocian claves con valores. Las claves deben ser únicas, pero los valores asociados no. De este modo, cada valor puede ser usado para identificar de manera única el valor asociado, ya que el mapa asegura que no puedes duplicar claves en la colección. Internamente, Kotlin usa la colección Java Map para implementar los mapas.
+A diferencia de las interfaces List y Set en Kotlin que extienden la interfaz Collection, la interfaz Map no extiende nada. Algunas de las propiedades y funciones disponibles en esta interfaz se muestran a [g1] continuación. Observa como solo se permite hacer consultas, al definir una colección inmutable.
+
+    size: tamaño de la colección.
+
+    isEmpty(): indica si el mapa está vacío.
+
+    containsKey(key: K): indica si el mapa contiene una clave.
+
+    containsValue(value: V): indica si el mapa contiene un valor.
+
+    get(key: K): valor asociado a la llave dada o null si no se encuentra.
+
+    keys: devuelve un Set inmutable con todas las claves en el mapa.
+
+    values: Collection inmutable de todos los valores en el mapa.
+
+mapOf() crea un mapa inmutable compuesto por una lista de pares, donde el primer valor es la clave, y el segundo es el valor. Devuelve un objeto de tipo Map. */
