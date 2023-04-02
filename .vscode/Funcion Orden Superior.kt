@@ -71,19 +71,20 @@ val resu1 = operar(10, 5, ::sumar)
 La función operar retorna un entero y lo almacenamos en la variable resu1 que mostramos luego por pantalla:*/
 
 println("La suma de 10 y 5 es $resu1")
+/* 
 Es importante imaginar el funcionamiento de la función operar que recibe tres datos y utiliza uno de ellos para llamar a otra función que retorna un valor y que luego este valor lo retorna operar y llega finalmente a la variable “resu1”.
 
-Llamamos a operar y le pasamos nuevamente la referencia a la función sumar:
+Llamamos a operar y le pasamos nuevamente la referencia a la función sumar:*/
 
 val resu2 = operar(5, 2, ::sumar)
 println("La suma de 5 y 2 es $resu2")
-
-De forma similar llamamos a operar y le pasamos las referencias a las otras funciones:
+/* 
+De forma similar llamamos a operar y le pasamos las referencias a las otras funciones:*/
 
 println("La resta de 100 y 40 es ${operar(100, 40, ::restar)}")
 println("El producto entre 5 y 20 es ${operar(5, 20, ::multiplicar)}")
 println("La división entre 10 y 5 es ${operar(10, 5, ::dividir)}")
-
+/* 
 Tener en cuenta que para sumar dos enteros es mejor llamar directamente a la función sumar y pasar los dos enteros, pero el objetivo de este problema es conocer la sintaxis de las funciones de orden superior presentando el problema más sencillo.
 
 Las funciones de orden superior se pueden utilizar perfectamente en los métodos de una clase.
@@ -93,7 +94,7 @@ Problema 2
 Declarar una clase que almacene el nombre y la edad de una persona. Definir un método que retorne true o false según si la persona es mayor de edad o no. Esta función debe recibir como parámetro una función que al llamarla pasando la edad de la persona retornara si es mayor o no de edad.
 Tener en cuenta que una persona es mayor de edad en Estados Unidos si tiene 21 o más años y en Argentina si tiene 18 o más años.
 
-Proyecto148 - Principal.kt
+*/
 
 class Persona(val nombre: String, val edad: Int) {
     fun esMayor(fn:(Int) -> Boolean): Boolean {
@@ -126,18 +127,18 @@ fun main(parametro: Array<String>) {
     else
         println("${persona1.nombre} no es mayor si vive en Estados Unidos")
 }
-
+/* 
 Declaramos la clase Persona con dos propiedades llamadas nombre y edad:
 
 class Persona(val nombre: String, val edad: Int) {
 
-La clase persona por si misma no guarda la nacionalidad de la persona, en cambio cuando se pregunta si es mayor de edad se le pasa como referencia una función que al pasar la edad nos retorna true o false:
+La clase persona por si misma no guarda la nacionalidad de la persona, en cambio cuando se pregunta si es mayor de edad se le pasa como referencia una función que al pasar la edad nos retorna true o false:*/
 
 fun esMayor(fn:(Int) -> Boolean): Boolean {
         return fn(edad)
     }
-
-Tenemos dos funciones que al pasar una edad nos retornan si es mayor de edad o no:
+/* 
+Tenemos dos funciones que al pasar una edad nos retornan si es mayor de edad o no:*/
 
 fun mayorEstadosUnidos(edad: Int): Boolean {
     if (edad >= 21)
@@ -152,28 +153,28 @@ fun mayorArgentina(edad: Int): Boolean {
     else
         return false
 }
-
+/* 
 En la función main creamos un objeto de la clase persona:
 
 val persona1 = Persona("juan", 18)
 
 Llamamos al método esMayor del objeto persona1 y le pasamos la referencia de la función “mayorArgentina”:
-
+*/
  if (persona1.esMayor(::mayorArgentina))
         println("${persona1.nombre} es mayor si vive en Argentina")
     else
         println("${persona1.nombre} no es mayor si vive en Argentina")
-
-Ahora llamamos al método esMayor pero pasando la referencia de la función “mayorEstadosUnidos”:
+/* 
+Ahora llamamos al método esMayor pero pasando la referencia de la función “mayorEstadosUnidos”:*/
 
 if (persona1.esMayor(::mayorEstadosUnidos))
         println("${persona1.nombre} es mayor si vive en Estados Unidos")
     else
         println("${persona1.nombre} no es mayor si vive en Estados Unidos")
-
+/* 
 Como podemos comprobar el concepto de funciones de orden superior es aplicable a los métodos de una clase.
 
-No hicimos un código más conciso con el objeto que quede más claro la sintaxis de funciones de orden superior, pero el mismo problema puede ser:
+No hicimos un código más conciso con el objeto que quede más claro la sintaxis de funciones de orden superior, pero el mismo problema puede ser:*/
 
 class Persona(val nombre: String, val edad: Int) {
     fun esMayor(fn:(Int) -> Boolean) = fn(edad)
