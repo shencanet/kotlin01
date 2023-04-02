@@ -1,5 +1,7 @@
 /*Funciones de orden superior
 
+UNA FUNCIÓN DE ORDEN SUPERIOR ES UNA FUNCIÓN QUE RECIBE O DEVUELVE OTRAS FUNCIONES.
+
 Kotlin es un lenguaje orientado a objetos pero introduce características existentes en los lenguajes funcionales que nos permiten crear un código más claro y expresivo.
 
 Una de las características del paradigma de la programación funcional son las funciones de orden superior.
