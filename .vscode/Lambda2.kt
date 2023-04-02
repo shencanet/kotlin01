@@ -1,13 +1,20 @@
+fun main(args: Array<String>){
+    var largoValorInit = superFunction(valorInit = "Hola", block = {
+        it.length
+    })
+    println(largoValorInit)
 
-fun main(args: Array<String>) {
-    val largodelValorInicial = superFuncion(valorInicial = "Hola", block = { valor ->
-        valor.length})
+    val lambda = functionInception("David")
+    println(lambda())
+}
 
-     println(largodelValorInicial)
+fun superFunction (valorInit: String, block : (String)->Int) :Int {
+    return block(valorInit)
+}
+
+fun functionInception (nombre:String): () -> String {
+    return{
+        "Hola"+" "+nombre
     }
-
-
-fun superFuncion(valorInicial: String, block : (String) -> Int) : Int {
-    return block(valorInicial)
 }
 
